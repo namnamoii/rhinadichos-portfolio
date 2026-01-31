@@ -156,6 +156,7 @@
             height: 100%;
             background: radial-gradient(circle at 20% 50%, rgba(212,175,55,0.1) 0%, transparent 50%);
             pointer-events: none;
+            z-index: 1;
         }
 
         .video-container {
@@ -215,10 +216,14 @@
             max-width: 700px;
             margin: 0 auto;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 10;
         }
 
         .preview-content {
             text-align: center;
+            position: relative;
+            z-index: 11;
         }
 
         .preview-icon {
@@ -260,6 +265,13 @@
             font-weight: bold;
             font-size: 1.2rem;
             flex-shrink: 0;
+        }
+
+        .preview-content .btn {
+            display: inline-block;
+            pointer-events: auto;
+            position: relative;
+            z-index: 100;
         }
 
         @keyframes fadeIn {
@@ -400,6 +412,7 @@
         .skills {
             padding: 6rem 2rem;
             background: white;
+            min-height: 400px;
         }
 
         .skills-container {
@@ -420,6 +433,8 @@
             border-radius: 15px;
             border-left: 4px solid var(--accent);
             transition: all 0.3s ease;
+            display: block;
+            opacity: 1;
         }
 
         .skill-category:hover {
@@ -457,6 +472,7 @@
             padding: 6rem 2rem;
             background: var(--primary);
             color: white;
+            min-height: 400px;
         }
 
         .portfolio-grid {
@@ -474,6 +490,8 @@
             border: 1px solid rgba(255,255,255,0.1);
             backdrop-filter: blur(10px);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: block;
+            opacity: 1;
         }
 
         .portfolio-card:hover {
@@ -694,8 +712,8 @@
 
         /* Scroll Reveal Animation */
         .reveal {
-            opacity: 0;
-            transform: translateY(50px);
+            opacity: 1;
+            transform: translateY(0);
             transition: all 0.8s ease-out;
         }
 
